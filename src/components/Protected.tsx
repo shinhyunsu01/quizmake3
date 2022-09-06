@@ -12,7 +12,7 @@ const Protected = ({ children }: ProtectedType) => {
 		return <Navigate to="/signin" />;
 	}
 
-	return children;
+	return <>{children}</>;
 };
 
 export default Protected;
