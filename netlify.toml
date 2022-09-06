@@ -1,3 +1,15 @@
 [build]
-publish = "publish"
+publish = "build"
 command = "npm run build"
+
+[context.production.environment]
+ REACT_APP_APIKEY = AIzaSyCSfVN-jfMkslntmUDIIrqj8Y89CSL4hIU
+ REACT_APP_AUTHDOMAIN = quizapp-102fd.firebaseapp.com
+ REACT_APP_PROJECT_ID = quizapp-102fd
+ REACT_APP_STORAGEBUCKET = quizapp-102fd.appspot.com
+ REACT_APP_MESSAGINGSENDERID = 591791955125
+ REACT_APP_APPID = 1:591791955125:web:125c4015d10f2d113df2fc
+ REACT_APP_MEASUREMENTID = G-8MMD4D5Z9W
+
+
+
