@@ -49,11 +49,6 @@ const Quiz = () => {
 			difficultSelect: next === 1 ? value : select.difficultSelect,
 		});
 	};
-	const { user } = UserAuth();
-	/*useEffect(() => {
-		if (user === null || !Object.keys(user).includes("displayName"))
-			navigate("/signin");
-	}, [user]);*/
 
 	return (
 		<div className="relative font-bold  flex flex-col items-center w-full h-[500px] border rounded-md mx-6 ">

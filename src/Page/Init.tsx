@@ -6,14 +6,6 @@ import { UserAuth } from "../context/Auth";
 const Init: React.FC = () => {
 	const navigate = useNavigate();
 	const { user } = UserAuth();
-	/*useEffect(() => {
-		if (
-			user === undefined ||
-			user === null ||
-			(user && !Object.keys(user).includes("displayName"))
-		)
-			navigate("/signin");
-	}, [user]);*/
 
 	return (
 		<div className="font-bold  flex flex-col justify-center items-center w-full h-[500px] border rounded-md mx-6">

@@ -38,9 +38,6 @@ const Note: React.FC = () => {
 	useEffect(() => {
 		let wrongQuizAll: QuizType[] = [];
 
-		/*if (Object.keys(quizInfo).length === 0) {
-			navigate("/signin");
-		} else {*/
 		quizInfo.quizAll.map((quiz: QuizType) => {
 			if (quiz.result === false) {
 				wrongQuizAll.push(quiz);
@@ -48,7 +45,6 @@ const Note: React.FC = () => {
 		});
 
 		setwrongQuizAll(wrongQuizAll);
-		//}
 	}, []);
 
 	const handler = async (e: React.MouseEvent<HTMLElement>) => {

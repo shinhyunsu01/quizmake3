@@ -51,17 +51,13 @@ const ViewNote = () => {
 		setWrongMemo("");
 	}, [index, setIndex]);
 	const readQuiz = async () => {
-		console.log(user);
-		//if (user && Object.keys(user).includes("displayName")) {
 		const read = await firebaseGet({ user: user.displayName });
 
 		if (read && read.Quiz) {
 			setReadData(read.Quiz);
 		} else {
-			//if(readData && readData?.length === 0)
 			navigate("/signin");
 		}
-		//}
 	};
 	const handler = async (e: React.MouseEvent<HTMLElement>) => {
 		e.preventDefault();
