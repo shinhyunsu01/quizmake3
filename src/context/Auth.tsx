@@ -37,7 +37,7 @@ export const AuthContextProvider = ({ children }: AuthType) => {
 			console.log("ok", user);
 			unsubscribe();
 		};*/
-	});
+	}, [authService]);
 	console.log("ok", user);
 
 	return (
