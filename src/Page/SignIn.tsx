@@ -9,7 +9,7 @@ const SignIn: React.FC = () => {
 
 	useEffect(() => {
 		if (user && Object.keys(user).includes("displayName")) navigate("/");
-	}, []);
+	}, [user]);
 
 	return (
 		<div className="h-screen w-full flex justify-center items-center">
