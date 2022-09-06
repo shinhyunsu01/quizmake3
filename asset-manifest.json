@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/quizmake3/static/css/main.22dde9bb.css",
+    "main.js": "/quizmake3/static/js/main.ec3f888a.js",
+    "index.html": "/quizmake3/index.html",
+    "main.22dde9bb.css.map": "/quizmake3/static/css/main.22dde9bb.css.map",
+    "main.ec3f888a.js.map": "/quizmake3/static/js/main.ec3f888a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22dde9bb.css",
+    "static/js/main.ec3f888a.js"
+  ]
+}
