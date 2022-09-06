@@ -45,7 +45,6 @@ const ViewNote = () => {
 		)
 			navigate("/signin");
 		else readQuiz();
-		console.log(user);
 	}, []);
 
 	useEffect(() => {
