@@ -45,7 +45,7 @@ const ViewNote = () => {
 		)
 			navigate("/signin");
 		else readQuiz();
-	}, [user]);
+	}, []);
 
 	useEffect(() => {
 		setWrongMemo("");
