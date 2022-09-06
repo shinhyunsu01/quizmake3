@@ -18,7 +18,7 @@ import PrevNext from "../components/PrevNext";
 import { ref, uploadBytes } from "@firebase/storage";
 import { storage } from "../firebase/setup";
 
-const Note = () => {
+const Note: React.FC = () => {
 	const { user } = UserAuth();
 	const { quizInfo, setQuizInfo } = useContext(QuizContext);
 	const [wrongQuizAll, setwrongQuizAll] = useState<QuizType[]>();
@@ -38,17 +38,17 @@ const Note = () => {
 	useEffect(() => {
 		let wrongQuizAll: QuizType[] = [];
 
-		if (Object.keys(quizInfo).length === 0) {
+		/*if (Object.keys(quizInfo).length === 0) {
 			navigate("/signin");
-		} else {
-			quizInfo.quizAll.map((quiz: QuizType) => {
-				if (quiz.result === false) {
-					wrongQuizAll.push(quiz);
-				}
-			});
+		} else {*/
+		quizInfo.quizAll.map((quiz: QuizType) => {
+			if (quiz.result === false) {
+				wrongQuizAll.push(quiz);
+			}
+		});
 
-			setwrongQuizAll(wrongQuizAll);
-		}
+		setwrongQuizAll(wrongQuizAll);
+		//}
 	}, []);
 
 	const handler = async (e: React.MouseEvent<HTMLElement>) => {

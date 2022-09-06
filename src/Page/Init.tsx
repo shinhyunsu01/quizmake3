@@ -3,17 +3,17 @@ import { useNavigate } from "react-router";
 import Button from "../components/Button";
 import { UserAuth } from "../context/Auth";
 
-const Init = () => {
+const Init: React.FC = () => {
 	const navigate = useNavigate();
 	const { user } = UserAuth();
-	useEffect(() => {
+	/*useEffect(() => {
 		if (
 			user === undefined ||
 			user === null ||
 			(user && !Object.keys(user).includes("displayName"))
 		)
 			navigate("/signin");
-	}, [user]);
+	}, [user]);*/
 
 	return (
 		<div className="font-bold  flex flex-col justify-center items-center w-full h-[500px] border rounded-md mx-6">

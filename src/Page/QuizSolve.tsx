@@ -53,11 +53,11 @@ const QuizSolve: React.FC = () => {
 		}
 	};
 
-	useEffect(() => {
+	/*useEffect(() => {
 		if (Object.keys(quizInfo).length === 0) {
 			navigate("/signin");
 		}
-	}, []);
+	}, []);*/
 
 	return (
 		<>

@@ -50,10 +50,10 @@ const Quiz = () => {
 		});
 	};
 	const { user } = UserAuth();
-	useEffect(() => {
+	/*useEffect(() => {
 		if (user === null || !Object.keys(user).includes("displayName"))
 			navigate("/signin");
-	}, [user]);
+	}, [user]);*/
 
 	return (
 		<div className="relative font-bold  flex flex-col items-center w-full h-[500px] border rounded-md mx-6 ">

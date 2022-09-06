@@ -10,6 +10,7 @@ import Note from "./Page/Note";
 import ViewNote from "./Page/ViewNote";
 import Init from "./Page/Init";
 import Quiz from "./Page/Quiz";
+import Protected from "./components/Protected";
 
 function App() {
 	return (
@@ -18,13 +19,55 @@ function App() {
 				<QuizContextProvider>
 					<Router>
 						<Routes>
-							<Route path="/" element={<Init />} />
+							<Route
+								path="/"
+								element={
+									<Protected>
+										<Init />
+									</Protected>
+								}
+							/>
 							<Route path="/signin" element={<SignIn />} />
-							<Route path="/quiz" element={<Quiz />} />
-							<Route path="/quizsolve" element={<QuizSolve />} />
-							<Route path="/result" element={<Result />} />
-							<Route path="/note" element={<Note />} />
-							<Route path="/viewnote" element={<ViewNote />} />
+							<Route
+								path="/quiz"
+								element={
+									<Protected>
+										<Quiz />
+									</Protected>
+								}
+							/>
+							<Route
+								path="/quizsolve"
+								element={
+									<Protected>
+										<QuizSolve />
+									</Protected>
+								}
+							/>
+							<Route
+								path="/result"
+								element={
+									<Protected>
+										<Result />
+									</Protected>
+								}
+							/>
+							<Route
+								path="/note"
+								element={
+									<Protected>
+										<Note />
+									</Protected>
+								}
+							/>
+							<Route
+								path="/viewnote"
+								element={
+									<Protected>
+										<ViewNote />
+									</Protected>
+								}
+							/>
 						</Routes>
 					</Router>
 				</QuizContextProvider>
