@@ -11,7 +11,7 @@ type ButtonType = {
 };
 
 export const buttonStyle =
-	"transition-all duration-300 ease-in-out hover:text-white   mx-2  my-2 py-2 font-medium text-black  rounded-md";
+	"transition-all text-center duration-300 ease-in-out hover:text-white   mx-2  my-2 py-2 font-medium text-black  rounded-md";
 
 const Button = ({ handler, name, style, id, children }: ButtonType) => {
 	const navigate = useNavigate();
