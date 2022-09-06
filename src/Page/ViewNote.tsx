@@ -38,13 +38,7 @@ const ViewNote = () => {
 	const [modify, setModify] = useState(false);
 
 	useEffect(() => {
-		/*if (
-			user === undefined ||
-			user === null ||
-			(user && !Object.keys(user).includes("displayName"))
-		)
-			navigate("/signin");
-		else */ readQuiz();
+		readQuiz();
 	}, []);
 
 	useEffect(() => {

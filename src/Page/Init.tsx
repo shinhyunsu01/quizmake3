@@ -5,7 +5,6 @@ import { UserAuth } from "../context/Auth";
 
 const Init: React.FC = () => {
 	const navigate = useNavigate();
-	const { user } = UserAuth();
 
 	return (
 		<div className="font-bold  flex flex-col justify-center items-center w-full h-[500px] border rounded-md mx-6">
