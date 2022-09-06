@@ -30,9 +30,10 @@ export const AuthContextProvider = ({ children }: AuthType) => {
 	const logOut = () => {
 		signOut(authService);
 	};
-
+	console.log("ok");
 	useEffect(() => {
 		onAuthStateChanged(authService, (current) => {
+			console.log("1ok", current);
 			if (current && Object.keys(current).includes("displayName")) {
 				setUser(current);
 				navigate("/");
@@ -40,7 +41,7 @@ export const AuthContextProvider = ({ children }: AuthType) => {
 				navigate("/signin");
 			}
 		});
-	}, [authService]);
+	}, []);
 
 	return (
 		<AuthContext.Provider value={{ googleSignIn, logOut, user }}>
