@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
-import Button from "../components/Button";
+import { Link } from "react-router-dom";
+import Button, { buttonStyle } from "../components/Button";
 import { UserAuth } from "../context/Auth";
 
 const Init: React.FC = () => {
@@ -11,8 +12,12 @@ const Init: React.FC = () => {
 			<div>총 10개 퀴즈 준비 되어 있습니다</div>
 			<div>🔔</div>
 			<div className="flex  justify-center">
-				<Button handler={() => navigate("/viewnote")} name="오답 노트" />
-				<Button handler={() => navigate("/quiz")} name="퀴즈 선택" />
+				<Link className={buttonStyle} to="/viewnote">
+					오답 노트
+				</Link>
+				<Link className={buttonStyle} to="/quiz">
+					퀴즈 선택
+				</Link>
 			</div>
 		</div>
 	);
