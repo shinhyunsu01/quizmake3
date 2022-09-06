@@ -13,7 +13,7 @@ const Init = () => {
 			(user && !Object.keys(user).includes("displayName"))
 		)
 			navigate("/signin");
-	}, [user]);
+	}, []);
 
 	return (
 		<div className="font-bold  flex flex-col justify-center items-center w-full h-[500px] border rounded-md mx-6">
