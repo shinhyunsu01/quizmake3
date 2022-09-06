@@ -15,11 +15,11 @@ type firebaseSaveType = {
 	question?: string;
 };
 
-type firebaseImg = {
+type firebaseImgType = {
 	imageURL: string;
 };
 
-type firebaseImgGet = {
+type firebaseImgGetType = {
 	fileName: string;
 };
 
@@ -77,7 +77,7 @@ export const firebaseModify = async ({
 	return loading;
 };
 
-export const firebaseImg = async ({ imageURL }: firebaseImg) => {
+export const firebaseImg = async ({ imageURL }: firebaseImgType) => {
 	let blobBin = atob(imageURL.split(",")[1]);
 	let arr = [];
 
@@ -94,7 +94,7 @@ export const firebaseImg = async ({ imageURL }: firebaseImg) => {
 	return fileData;
 };
 
-export const firebaseImgGet = async ({ fileName }: firebaseImgGet) => {
+export const firebaseImgGet = async ({ fileName }: firebaseImgGetType) => {
 	const data = await getDownloadURL(ref(storage, `images/${fileName}`));
 	return data;
 };
@@ -104,7 +104,7 @@ export const firebaseGet = async ({ user }: firebaseSaveType) => {
 	return read.data();
 };
 
-export const firebaseImgDel = async ({ fileName }: firebaseImgGet) => {
+export const firebaseImgDel = async ({ fileName }: firebaseImgGetType) => {
 	const read = await deleteObject(ref(storage, `images/${fileName}`));
 	return read;
 };
