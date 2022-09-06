@@ -34,9 +34,10 @@ export const AuthContextProvider = ({ children }: AuthType) => {
 		onAuthStateChanged(authService, (current) => {
 			setUser(current);
 		});
-		/*return () => {
+		return () => {
+			console.log("ok", user);
 			unsubscribe();
-		};*/
+		};
 	});
 
 	return (
