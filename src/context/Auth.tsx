@@ -31,9 +31,10 @@ export const AuthContextProvider = ({ children }: AuthType) => {
 	};
 
 	useEffect(() => {
-		onAuthStateChanged(authService, (current) => {
+		const logindata = onAuthStateChanged(authService, (current) => {
 			setUser(current);
 		});
+		return () => logindata();
 	}, []);
 
 	return (
