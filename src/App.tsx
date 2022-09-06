@@ -14,7 +14,21 @@ import Quiz from "./Page/Quiz";
 function App() {
 	return (
 		<div className="max-w-3xl w-full h-screen mx-auto items-center justify-center flex ">
-			aaaa
+			<AuthContextProvider>
+				<QuizContextProvider>
+					<Router>
+						<Routes>
+							<Route path="/" element={<Init />} />
+							<Route path="/signin" element={<SignIn />} />
+							<Route path="/quiz" element={<Quiz />} />
+							<Route path="/quizsolve" element={<QuizSolve />} />
+							<Route path="/result" element={<Result />} />
+							<Route path="/note" element={<Note />} />
+							<Route path="/viewnote" element={<ViewNote />} />
+						</Routes>
+					</Router>
+				</QuizContextProvider>
+			</AuthContextProvider>
 		</div>
 	);
 }
