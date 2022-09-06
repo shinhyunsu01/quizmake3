@@ -30,12 +30,13 @@ export const AuthContextProvider = ({ children }: AuthType) => {
 	};
 
 	useEffect(() => {
-		const unsubscribe = onAuthStateChanged(authService, (current) => {
+		//const unsubscribe =
+		onAuthStateChanged(authService, (current) => {
 			setUser(current);
 		});
-		return () => {
+		/*return () => {
 			unsubscribe();
-		};
+		};*/
 	});
 
 	return (
