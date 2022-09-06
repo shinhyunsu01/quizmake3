@@ -28,17 +28,16 @@ export const AuthContextProvider = ({ children }: AuthType) => {
 	const logOut = () => {
 		signOut(authService);
 	};
-	/*
+
 	useEffect(() => {
-		const unsubscribe =
 		onAuthStateChanged(authService, (current) => {
 			setUser(current);
 		});
-		return () => {
+		/*return () => {
 			console.log("ok", user);
 			unsubscribe();
-		};
-	});*/
+		};*/
+	});
 	console.log("ok", user);
 
 	return (
