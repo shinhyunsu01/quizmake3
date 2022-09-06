@@ -13,10 +13,10 @@ const Init: React.FC = () => {
 			<div>총 10개 퀴즈 준비 되어 있습니다</div>
 			<div>🔔</div>
 			<div className="flex  justify-center">
-				<Link className={cls("w-28 bg-[#00df9a] ",buttonStyle} to="/viewnote">
+				<Link className={cls("w-28 bg-[#00df9a]", buttonStyle)} to="/viewnote">
 					오답 노트
 				</Link>
-				<Link className={cls("w-28 bg-[#00df9a] ",buttonStyle} to="/quiz">
+				<Link className={cls("w-28 bg-[#00df9a]", buttonStyle)} to="/quiz">
 					퀴즈 선택
 				</Link>
 			</div>
