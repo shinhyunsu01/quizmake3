@@ -51,13 +51,16 @@ const ViewNote = () => {
 		setWrongMemo("");
 	}, [index, setIndex]);
 	const readQuiz = async () => {
-		const read = await firebaseGet({ user: user.displayName });
+		console.log(user);
+		if (user && !Object.keys(user).includes("displayName")) {
+			const read = await firebaseGet({ user: user.displayName });
 
-		if (read && read.Quiz) {
-			setReadData(read.Quiz);
-		} else {
-			//if(readData && readData?.length === 0)
-			navigate("/signin");
+			if (read && read.Quiz) {
+				setReadData(read.Quiz);
+			} else {
+				//if(readData && readData?.length === 0)
+				navigate("/signin");
+			}
 		}
 	};
 	const handler = async (e: React.MouseEvent<HTMLElement>) => {
@@ -132,7 +135,63 @@ const ViewNote = () => {
 
 			{readData && readData.length !== 0 ? (
 				<>
-					<div>asdflkasnmglkan</div>
+					<div className="flex items-center flex-col sm:space-x-2">
+						<TopTitle title="오답 노트" />
+
+						<ViewQuiz question={unescapeHtml(readData[index].question)} />
+					</div>
+
+					<div className="flex ">
+						<WrongQuiz
+							quiz={readData[index].selectList}
+							select={readData[index].answer}
+							correctAnswer={readData[index].correct_answer}
+						/>
+
+						<textarea
+							ref={textRef}
+							className="rounded-2xl p-2 w-full mx-2 "
+							placeholder={
+								readData[index].memo ? readData[index].memo : "메모 해주세요"
+							}
+							value={wrongMemo}
+							onChange={onChange}
+							disabled={!modify}
+						></textarea>
+					</div>
+
+					<div className="flex font-bold">
+						<PrevNext setState={setIndex} state={index} data={readData} />
+						<button
+							id=""
+							onClick={() => setPaint(!paint)}
+							className={cls(
+								"w-16 z-10",
+								readData[index].imageUrl ? "bg-green-300" : "bg-slate-300",
+								buttonStyle
+							)}
+						>
+							그림
+						</button>
+						<button
+							id=""
+							onClick={handler}
+							className={cls(
+								"w-16 z-10 bg-green-300 flex items-center justify-center",
+								buttonStyle
+							)}
+						>
+							{click ? <Spin /> : "수정"}
+						</button>
+					</div>
+
+					<button
+						id=""
+						onClick={() => navigate("/")}
+						className={cls("w-16 z-10 bg-green-300", buttonStyle)}
+					>
+						메인
+					</button>
 				</>
 			) : (
 				<div className="flex items-center flex-col sm:space-x-2">
