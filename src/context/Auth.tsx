@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 
 import { authService } from "../firebase/setup";
+import { useNavigate } from "react-router";
 
 export const AuthContext = createContext<any>(undefined);
 
@@ -20,6 +21,7 @@ type AuthType = {
 
 export const AuthContextProvider = ({ children }: AuthType) => {
 	const [user, setUser] = useState<any>({});
+	const navigate = useNavigate();
 
 	const googleSignIn = () => {
 		const provider = new GoogleAuthProvider();
@@ -31,14 +33,14 @@ export const AuthContextProvider = ({ children }: AuthType) => {
 
 	useEffect(() => {
 		onAuthStateChanged(authService, (current) => {
-			setUser(current);
+			if (current && Object.keys(current).includes("displayName")) {
+				setUser(current);
+				navigate("/");
+			} else {
+				navigate("/signin");
+			}
 		});
-		/*return () => {
-			console.log("ok", user);
-			unsubscribe();
-		};*/
 	}, [authService]);
-	console.log("ok", user);
 
 	return (
 		<AuthContext.Provider value={{ googleSignIn, logOut, user }}>
