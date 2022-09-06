@@ -52,7 +52,7 @@ const ViewNote = () => {
 	}, [index, setIndex]);
 	const readQuiz = async () => {
 		console.log(user);
-		if (user && !Object.keys(user).includes("displayName")) {
+		if (user && Object.keys(user).includes("displayName")) {
 			const read = await firebaseGet({ user: user.displayName });
 
 			if (read && read.Quiz) {
