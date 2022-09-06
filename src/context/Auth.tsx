@@ -21,7 +21,6 @@ type AuthType = {
 
 export const AuthContextProvider = ({ children }: AuthType) => {
 	const [user, setUser] = useState<any>({});
-	const navigate = useNavigate();
 
 	const googleSignIn = () => {
 		const provider = new GoogleAuthProvider();
@@ -30,16 +29,10 @@ export const AuthContextProvider = ({ children }: AuthType) => {
 	const logOut = () => {
 		signOut(authService);
 	};
-	console.log("ok");
+
 	useEffect(() => {
 		onAuthStateChanged(authService, (current) => {
-			console.log("1ok", current);
-			if (current && Object.keys(current).includes("displayName")) {
-				setUser(current);
-				navigate("/");
-			} else {
-				navigate("/signin");
-			}
+			setUser(current);
 		});
 	}, []);
 

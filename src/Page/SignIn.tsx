@@ -16,7 +16,7 @@ const SignIn: React.FC = () => {
 			<div className="p-20 border border-w-2 border-green-300 rounded-2xl flex flex-col items-center space-y-[40px]">
 				<div className="text-xl font-bold ">퀴즈!!</div>
 				<div className="text-slate-500"># 문제 정보 만 기록이 됩니다 </div>
-				<GoogleButton onClick={googleSignIn} />
+				<GoogleButton onClick={() => googleSignIn()} />
 			</div>
 		</div>
 	);
