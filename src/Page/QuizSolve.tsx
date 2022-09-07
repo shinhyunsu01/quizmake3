@@ -1,3 +1,4 @@
+// eslint-disable-line no-unused-vars
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Modal from "../components/Modal";

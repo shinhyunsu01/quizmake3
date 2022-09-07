@@ -1,3 +1,4 @@
+// eslint-disable-line no-unused-vars
 import React, { useContext, useEffect, useState } from "react";
 import OneQuize from "../components/OneQuize";
 import WrongQuiz from "../components/WrongQuiz";

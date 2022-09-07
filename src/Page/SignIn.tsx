@@ -1,3 +1,4 @@
+// eslint-disable-line no-unused-vars
 import React, { useEffect } from "react";
 import GoogleButton from "react-google-button";
 import { UserAuth } from "../context/Auth";

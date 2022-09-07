@@ -1,3 +1,4 @@
+// eslint-disable-line no-unused-vars
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "../components/Button";
