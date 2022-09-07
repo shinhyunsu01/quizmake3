@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import GoogleButton from "react-google-button";
 import { UserAuth } from "../context/Auth";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const SignIn: React.FC = () => {
+const SignCom: React.FC = () => {
 	const { googleSignIn, user } = UserAuth();
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		if (user && Object.keys(user).includes("displayName")) navigate("/");
+		if (user && Object.keys(user).includes("displayName")) navigate("/home");
 	}, []);
 
 	return (
@@ -22,4 +22,4 @@ const SignIn: React.FC = () => {
 	);
 };
 
-export default SignIn;
+export default SignCom;

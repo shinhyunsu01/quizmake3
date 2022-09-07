@@ -20,6 +20,14 @@ function App() {
 					<Router>
 						<Routes>
 							<Route
+								path="/home"
+								element={
+									<Protected>
+										<Init />
+									</Protected>
+								}
+							/>
+							<Route
 								path="/"
 								element={
 									<Protected>
