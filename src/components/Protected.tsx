@@ -9,6 +9,7 @@ const Protected = ({ children }: ProtectedType) => {
 	const { user } = UserAuth();
 
 	if (user && !Object.keys(user).includes("displayName")) {
+		console.log(user);
 		return <Navigate to="/signin" />;
 	}
 
