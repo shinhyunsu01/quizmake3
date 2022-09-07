@@ -8,7 +8,6 @@ const SignIn: React.FC = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		console.log("s", user);
 		if (user && Object.keys(user).includes("displayName")) navigate("/home");
 	}, [user]);
 

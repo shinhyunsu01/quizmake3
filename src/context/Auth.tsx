@@ -34,7 +34,7 @@ export const AuthContextProvider = ({ children }: AuthType) => {
 		const logindata = onAuthStateChanged(authService, (current) => {
 			setUser(current);
 		});
-		return () => logindata();
+		return logindata;
 	}, []);
 
 	return (
