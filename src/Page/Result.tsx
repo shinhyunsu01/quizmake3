@@ -37,7 +37,7 @@ const Result: React.FC = () => {
 			});
 			setScore(scoreAdd);
 		} else {
-			navigate("/signin");
+			navigate("/");
 		}
 
 		let interval = setInterval(() => {

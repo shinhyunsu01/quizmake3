@@ -41,6 +41,6 @@ describe("Viewenote", () => {
 		const { getByRole, getByText, debug } = renderResult;
 		const button = getByText("Home");
 		userEvent.click(button);
-		expect(navigate).toHaveBeenCalledWith("/signin");
+		expect(navigate).toHaveBeenCalledWith("/");
 	});
 });

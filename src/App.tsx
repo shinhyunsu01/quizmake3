@@ -27,15 +27,15 @@ function App() {
 									</Protected>
 								}
 							/>
+							<Route path="/" element={<SignIn />} />
 							<Route
-								path="/"
+								path="/init"
 								element={
 									<Protected>
-										<Init />
+										<SignIn />
 									</Protected>
 								}
 							/>
-							<Route path="/signin" element={<SignIn />} />
 							<Route
 								path="/quiz"
 								element={

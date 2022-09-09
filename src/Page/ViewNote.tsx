@@ -51,7 +51,7 @@ const ViewNote = () => {
 		if (read && read.Quiz) {
 			setReadData(read.Quiz);
 		} else {
-			navigate("/signin");
+			navigate("/");
 		}
 	};
 	const handler = async (e: React.MouseEvent<HTMLElement>) => {
@@ -188,12 +188,7 @@ const ViewNote = () => {
 				<div className="flex items-center flex-col sm:space-x-2">
 					<TopTitle title="오답 기록이 없습니다" />
 
-					<Button
-						style=""
-						name="Home"
-						id=""
-						handler={() => navigate("/signin")}
-					/>
+					<Button style="" name="Home" id="" handler={() => navigate("/")} />
 				</div>
 			)}
 		</div>
